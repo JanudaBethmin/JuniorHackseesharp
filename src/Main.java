@@ -1,4 +1,8 @@
+
 import java.util.Scanner;
+import java.util.List;
+
+
 public class Main {
     public static Scanner sc = new Scanner(System.in);
     public static Management management = new Management();
@@ -54,6 +58,7 @@ public class Main {
         book.setISBN(sc.nextInt());
         System.out.println("Enter the Title:" );
         book.setTitle(sc.nextLine());
+        book.setTitle(sc.nextLine());
         System.out.println("Enter the Category:");
         book.setCategory(sc.nextLine());
         System.out.println("Enter the Author:");
@@ -74,6 +79,7 @@ public class Main {
         Book book = management.getBookIsbn(isbn);
         System.out.println("Update the book:\n" +
                 "Enter the new Title (A Song of Ice and Fire):\n");
+        book.setTitle(sc.nextLine());
         book.setTitle(sc.nextLine());
         System.out.println("Enter the new Category (Fantasy):\n");
         book.setCategory(sc.nextLine());
@@ -140,6 +146,12 @@ public class Main {
     public static void listAllAvailableBooks() {
         System.out.println("\nList all available books\n");
         // Loop for printing all the books
+        List <Integer> list = management.getAvailableBooks();
+        for(int i=0;i<list.size();i++){
+            int isbn= list.get(i);
+            Book book = management.getBookIsbn(isbn);
+            System.out.println(book);
+        }
     }
 
 

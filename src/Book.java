@@ -36,4 +36,8 @@ public class Book {
         this.author = author;
     }
 
+    @Override
+    public String toString() {
+        return ( ISBN + " - " + title + " - " + category + " - " + author );
+    }
 }
