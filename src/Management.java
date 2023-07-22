@@ -37,17 +37,17 @@ import java.util.Map;
         }
 
         public void removeBook(Book book) {
-            books.remove(book.getISBN());
-            availableBooks.remove(book.getISBN());
+            books.remove(book);
+            availableBooks.remove(book);
         }
 
         public void lendingBook(Book book) {
-            availableBooks.remove(book.getISBN());
+            availableBooks.remove(book);
             lendingBooks.add(book.getISBN());
         }
         public void returnBook(Book book) {
             availableBooks.add(book.getISBN());
-            lendingBooks.remove(book.getISBN());
+            lendingBooks.remove(book);
         }
 
         public Book getBookIsbn(int isbn) {
