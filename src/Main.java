@@ -4,7 +4,7 @@ public class Main {
     public static Management management = new Management();
     public static void main(String[] args) {
 
-        System.out.println("Welcome to the library management system UoK!\n" +
+        System.out.println("\nWelcome to the library management system UoK!\n" +
                 "Please choose an option:\n" +
                 "1. Add a new book\n" +
                 "2. Update an existing book\n" +
@@ -83,28 +83,30 @@ public class Main {
                 "Enter the ISBN:\n");
         int isbn=sc.nextInt();
         Book book = management.getBookIsbn(isbn);
-//        System.out.println("Are you sure you want to remove this book? (Y/N)\n");
-//        String c=sc.next();
+
         String choice;
         do{
             System.out.println("Are you sure you want to remove this book? (Y/N)\n");
-            String c=sc.next();
-            choice=c.toUpperCase();
+            String c= sc.next();
+            choice = c.toUpperCase();
 
             switch (choice){
                 case "Y":;break;
-                case "N":;break;
+                case "N":;main(null);break;
                 default:
                     System.out.println("Invalid choice");break;
             }
-        }while (choice!="Y"&&choice!="N");
-        // Scan
+        }while (choice.compareTo("Y") != 0 && choice.compareTo("N") != 0);
+
+        management.removeBook(book);
+
     }
 
     public static void lendABook() {
         System.out.println("\nLending a book\n" +
                 "Enter the ISBN:\n");
         int isbn = sc.nextInt();
+
     }
 
     public static void returnABook() {
