@@ -152,6 +152,9 @@ public class Main {
             Book book = management.getBookIsbn(isbn);
             System.out.println(book);
         }
+
+        System.out.println("");
+        main(null);
     }
 
 
