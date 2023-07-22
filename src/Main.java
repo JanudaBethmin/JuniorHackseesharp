@@ -73,17 +73,17 @@ public class Main {
 
     public static void updateAnExistingBook() {
         System.out.println("\nUpdate an existing bOOK\n" +
-                "Enter the ISBN that need to update:\n");
+                "Enter the ISBN that need to update:");
         int isbn=sc.nextInt();
         //Book aBook = Management.getBooks().get(isbn);
         Book book = management.getBookIsbn(isbn);
         System.out.println("Update the book:\n" +
-                "Enter the new Title ("+ book.getTitle()+"):\n");
+                "Enter the new Title ("+ book.getTitle()+"):");
         book.setTitle(sc.nextLine());
         book.setTitle(sc.nextLine());
-        System.out.println("Enter the new Category ("+book.getCategory()+"):\n");
+        System.out.println("Enter the new Category ("+book.getCategory()+"):");
         book.setCategory(sc.nextLine());
-        System.out.println("Enter the new Author ("+book.getAuthor()+"):\n");
+        System.out.println("Enter the new Author ("+book.getAuthor()+"):");
         book.setAuthor(sc.nextLine());
 
         management.updateBook(book);
@@ -94,13 +94,13 @@ public class Main {
 
     public static void removeAnExistingBook() {
         System.out.println("\nRemove an existing book\n" +
-                "Enter the ISBN:\n");
+                "Enter the ISBN:");
         int isbn=sc.nextInt();
         Book book = management.getBookIsbn(isbn);
 
         String choice;
         do{
-            System.out.println("Are you sure you want to remove this book? (Y/N)\n");
+            System.out.println("Are you sure you want to remove this book? (Y/N)");
             String c= sc.next();
             choice = c.toUpperCase();
 
@@ -121,7 +121,7 @@ public class Main {
 
     public static void lendABook() {
         System.out.println("\nLending a book\n" +
-                "Enter the ISBN:\n");
+                "Enter the ISBN:");
         int isbn = sc.nextInt();
         Book book = management.getBookIsbn(isbn);
 
@@ -133,7 +133,7 @@ public class Main {
 
     public static void returnABook() {
         System.out.println("\nReturn a book\n" +
-                "Enter the ISBN:\n");
+                "Enter the ISBN:");
         int isbn=sc.nextInt();
         Book book = management.getBookIsbn(isbn);
 
@@ -144,7 +144,7 @@ public class Main {
     }
 
     public static void listAllAvailableBooks() {
-        System.out.println("\nList all available books\n");
+        System.out.println("\nList all available books");
         // Loop for printing all the books
         List <Integer> list = management.getAvailableBooks();
         for(int i=0;i<list.size();i++){
