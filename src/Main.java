@@ -78,15 +78,15 @@ public class Main {
         //Book aBook = Management.getBooks().get(isbn);
         Book book = management.getBookIsbn(isbn);
         System.out.println("Update the book:\n" +
-                "Enter the new Title (A Song of Ice and Fire):\n");
+                "Enter the new Title ("+ book.getTitle()+"):\n");
         book.setTitle(sc.nextLine());
         book.setTitle(sc.nextLine());
-        System.out.println("Enter the new Category (Fantasy):\n");
+        System.out.println("Enter the new Category ("+book.getCategory()+"):\n");
         book.setCategory(sc.nextLine());
-        System.out.println("Enter the new Author (George R. R. Martin):\n");
+        System.out.println("Enter the new Author ("+book.getAuthor()+"):\n");
         book.setAuthor(sc.nextLine());
 
-        management.addBook(book);
+        management.updateBook(book);
 
         System.out.println("Successfully updated a book.");
         main(null);

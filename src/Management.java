@@ -32,6 +32,10 @@ import java.util.Map;
             availableBooks.add(book.getISBN());
         }
 
+        public void updateBook(Book book) {
+            books.put(book.getISBN(), book);
+        }
+
         public void removeBook(Book book) {
             books.remove(book.getISBN());
             availableBooks.remove(book.getISBN());
