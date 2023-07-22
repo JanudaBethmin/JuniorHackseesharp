@@ -50,16 +50,19 @@ public class Main {
 
         Book book = new Book();
         System.out.println("\nAdd a new book\n" +
-                "Enter the ISBN:\n");
+                "Enter the ISBN:");
         book.setISBN(sc.nextInt());
-        System.out.println("Enter the Title:\n" );
+        System.out.println("Enter the Title:" );
         book.setTitle(sc.nextLine());
-        System.out.println("Enter the Category:\n");
+        System.out.println("Enter the Category:");
         book.setCategory(sc.nextLine());
-        System.out.println("Enter the Author:\n");
+        System.out.println("Enter the Author:");
         book.setAuthor(sc.nextLine());
 
         management.addBook(book);
+
+        System.out.println("Successfully added a book.");
+        main(null);
 
     }
 
@@ -76,6 +79,11 @@ public class Main {
         book.setCategory(sc.nextLine());
         System.out.println("Enter the new Author (George R. R. Martin):\n");
         book.setAuthor(sc.nextLine());
+
+        management.addBook(book);
+
+        System.out.println("Successfully updated a book.");
+        main(null);
     }
 
     public static void removeAnExistingBook() {
@@ -100,19 +108,33 @@ public class Main {
 
         management.removeBook(book);
 
+        System.out.println("Successfully removed a book.");
+        main(null);
+
     }
 
     public static void lendABook() {
         System.out.println("\nLending a book\n" +
                 "Enter the ISBN:\n");
         int isbn = sc.nextInt();
+        Book book = management.getBookIsbn(isbn);
 
+        management.lendingBook(book);
+
+        System.out.println("Successfully lended a book.");
+        main(null);
     }
 
     public static void returnABook() {
         System.out.println("\nReturn a book\n" +
                 "Enter the ISBN:\n");
         int isbn=sc.nextInt();
+        Book book = management.getBookIsbn(isbn);
+
+        management.returnBook(book);
+
+        System.out.println("Successfully returned a book.");
+        main(null);
     }
 
     public static void listAllAvailableBooks() {

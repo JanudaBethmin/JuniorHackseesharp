@@ -46,7 +46,6 @@ import java.util.Map;
             lendingBooks.remove(book.getISBN());
         }
 
-
         public Book getBookIsbn(int isbn) {
             return books.get(isbn);
         }
